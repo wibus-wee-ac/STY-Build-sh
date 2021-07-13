@@ -1,0 +1,9 @@
+clear
+echo "PUSH MESSAGE: "
+read MESSAGE
+cd /Users/wibus/Desktop/wibus/Develop-Typecho/STY/
+echo $MESSAGE
+git add .
+git commit -am "$MESSAGE"
+git push
+echo "SUCCESS"

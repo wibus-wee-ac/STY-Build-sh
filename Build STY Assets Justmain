@@ -1,0 +1,7 @@
+clear
+cd /Users/wibus/Desktop/wibus/Develop-Typecho/STY/assets/js/
+cat component-native.min.js headroom.js polyfill.min.js > STY.main.js
+echo "SUCCESS"
+cd /Users/wibus/Desktop/wibus/Develop-Typecho/STY/assets/css/
+cat layout.css grid.css dark.css vditor-render.css comment.css > layout.main.css
+echo "SUCCESS"

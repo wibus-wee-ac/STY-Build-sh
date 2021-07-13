@@ -1,0 +1,19 @@
+#!/bin/sh
+a="-Pro"
+echo "STY 打包程序"
+echo "打包版本号"
+read a
+cd /Users/wibus/Desktop/wibus/Develop-Typecho
+# mkdir Mix
+echo "copy STY(in safe mode)"
+cp -rf STY ~/desktop/STY
+cd ~/desktop/STY
+echo "delete .git & workflows"
+trash .git
+trash .github
+cd ~/desktop
+echo "Compressing STY"
+zip -q -r -P Wibus STY\ V$a.zip STY
+echo "Delete dir(in safe mode)"
+trash STY
+
