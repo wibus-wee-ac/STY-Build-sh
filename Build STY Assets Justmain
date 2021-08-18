@@ -1,7 +1,20 @@
 clear
-cd /Users/wibus/Desktop/wibus/Develop-Typecho/STY/assets/js/
-cat component-native.min.js headroom.js polyfill.min.js > STY.main.js
+css=layout.css\ grid.css\ dark.css\ vditor-render.css\ comment.css\ animate.min.css\ callback.css\ ks.css\ hint.css
+js=component-native.min.js\ headroom.js\ polyfill.min.js\ devtools-detector.js
+cd /Users/wibus/Desktop/wibus/Wibus\ blog/Develop-Typecho/STY/assets/js/
+cat $js > STY.main.js
 echo "SUCCESS"
-cd /Users/wibus/Desktop/wibus/Develop-Typecho/STY/assets/css/
-cat layout.css grid.css dark.css vditor-render.css comment.css > layout.main.css
+cd /Users/wibus/Desktop/wibus/Wibus\ blog/Develop-Typecho/STY/assets/css/
+cat $css > layout.main.scss
+
+sass layout.main.scss:layout.main.css --style compressed
+sass SBS.scss:SBS.css --style compressed
+sass weeWhite.scss:weeWhite.css --style compressed
+sass RText.scss:RText.css --style compressed
+
+#rm layout.main.css.map
+#rm SBS.css.map
+#rm weeWhite.css.map
+
 echo "SUCCESS"
+exit

@@ -1,0 +1,32 @@
+###
+ # @FilePath: /undefined/Users/wibus/Desktop/UpLoad STY Assets
+ # @author: Wibus
+ # @Date: 2021-08-13 22:14:21
+ # @LastEditors: Wibus
+ # @LastEditTime: 2021-08-13 22:32:13
+ # Coding With IU
+###
+cd /Users/wibus/Desktop/wibus/Wibus\ blog/Develop-Typecho/STY-static/
+a=$(cat .ver)
+echo "目前版本号：$a"
+read a
+time=$(date "+%Y-%m-%d %H:%M:%S")
+rm -rf /Users/wibus/Desktop/wibus/Wibus\ blog/Develop-Typecho/STY-static/*
+mkdir assets
+cp -rf /Users/wibus/Desktop/wibus/Wibus\ blog/Develop-Typecho/STY/assets/* /Users/wibus/Desktop/wibus/Wibus\ blog/Develop-Typecho/STY-static/assets
+cd assets
+cp -rf /Users/wibus/Desktop/wibus/照片/Unlash/* img/
+ls /Users/wibus/Desktop/wibus/Wibus\ blog/Develop-Typecho/STY-static/
+cd ..
+echo "# STY-static
+> 最后上传时间：${time}" > README.md
+echo "$a" > .ver
+git config commit.gpgsign false
+git add .
+git commit -m "${time} static"
+git push
+echo "SUCCESS"
+echo "——————STY Static $a ——————"
+echo "Repo: https://github.com/wibus-wee/STY-static"
+echo "jsD: https://cdn.jsdelivr.net/gh/wibus-wee/STY-static/"
+exit

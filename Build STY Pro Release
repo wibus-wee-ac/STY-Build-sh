@@ -1,9 +1,11 @@
 #!/bin/sh
 a="-Pro"
+css=layout.css\ grid.css\ dark.css\ vditor-render.css\ comment.css\ animate.min.css\ callback.css\ ks.css\ hint.css
+js=component-native.min.js\ headroom.js\ polyfill.min.js\ devtools-detector.js
 echo "STY 打包程序"
 echo "打包版本号"
 read a
-cd /Users/wibus/Desktop/wibus/Develop-Typecho
+cd /Users/wibus/Desktop/wibus/Wibus\ blog/Develop-Typecho
 # mkdir Mix
 echo "copy STY(in safe mode)"
 cp -rf STY ~/desktop/STY
@@ -11,9 +13,22 @@ cd ~/desktop/STY
 echo "delete .git & workflows"
 trash .git
 trash .github
+echo "delete useless Assets: "
+echo $css
+echo $js
+cd assets
+cd css
+trash $css
+cd .. # assets
+cd js
+trash $js
+cd .. #assets
+cd .. #STY Root
+echo "Delete .DS_Store"
+find . -name '.DS_Store'
+find . -name '.DS_Store' -delete
 cd ~/desktop
 echo "Compressing STY"
 zip -q -r -P Wibus STY\ V$a.zip STY
 echo "Delete dir(in safe mode)"
-trash STY
-
+#trash STY

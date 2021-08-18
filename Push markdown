@@ -1,0 +1,6 @@
+clear
+cd /Users/wibus/Desktop/wibus/Markdown
+git add .
+git commit -am "update"
+git push
+echo "SUCCESS"

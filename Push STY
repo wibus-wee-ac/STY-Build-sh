@@ -1,6 +1,5 @@
 clear
-cd /Users/wibus/Desktop/wibus/Develop-Typecho/STY/
-echo $MESSAGE
+cd /Users/wibus/Desktop/wibus/Wibus\ blog/Develop-Typecho/STY
 git add .
 #git commit -am "$MESSAGE"
 gitmoji -c

@@ -1,7 +1,7 @@
 #!/bin/sh
 a="-Pro"
 echo "STY 打包程序"
-cd /Users/wibus/Desktop/wibus/Develop-Typecho
+cd /Users/wibus/Desktop/wibus/Wibus\ blog/Develop-Typecho
 # mkdir Mix
 echo "copy STY(in safe mode)"
 cp -rf STY ~/desktop/STY
@@ -9,6 +9,8 @@ cd ~/desktop/STY
 echo "delete .git & workflows"
 trash .git
 trash .github
+find . -name '.DS_Store'
+find . -name '.DS_Store' -delete
 cd ~/desktop
 echo "Compressing STY"
 zip -q -r STY\ Dev.zip STY
