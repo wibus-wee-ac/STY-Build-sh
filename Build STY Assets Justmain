@@ -7,10 +7,36 @@ echo "SUCCESS"
 cd /Users/wibus/Desktop/wibus/Wibus\ blog/Develop-Typecho/STY/assets/css/
 cat $css > layout.main.scss
 
+#  layout.main.scss
 sass layout.main.scss:layout.main.css --style compressed
+
+# SBS.css
+cd /Users/wibus/Desktop/wibus/Wibus\ blog/Develop-Typecho/STY/themes/SBS/css/
 sass SBS.scss:SBS.css --style compressed
+
+# weeWhite.css
+cd /Users/wibus/Desktop/wibus/Wibus\ blog/Develop-Typecho/STY/themes/weeWhite/css/
 sass weeWhite.scss:weeWhite.css --style compressed
+
+# RText.css
+cd /Users/wibus/Desktop/wibus/Wibus\ blog/Develop-Typecho/STY/themes/RText/css/
 sass RText.scss:RText.css --style compressed
+
+# icarus.css
+cd /Users/wibus/Desktop/wibus/Wibus\ blog/Develop-Typecho/STY/themes/icarus/css/
+sass icarus.scss:icarus.css --style compressed
+
+# 将CSS全部移动到assets文件夹
+cd /Users/wibus/Desktop/wibus/Wibus\ blog/Develop-Typecho/STY/
+mv themes/SBS/css/SBS.css assets/css/
+mv themes/SBS/css/SBS.css.map assets/css/
+mv themes/weeWhite/css/weeWhite.css assets/css/
+mv themes/weeWhite/css/weeWhite.css.map assets/css/
+mv themes/RText/css/RText.css assets/css/
+mv themes/RText/css/RText.css.map assets/css/
+mv themes/icarus/css/icarus.css assets/css/
+mv themes/icarus/css/icarus.css.map assets/css/
+
 
 #rm layout.main.css.map
 #rm SBS.css.map

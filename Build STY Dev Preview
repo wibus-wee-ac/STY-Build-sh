@@ -1,5 +1,8 @@
-#!/bin/sh
+#!/bin/zsh
 a="-Pro"
+date=$(date +%Y%m%d%H%M%S)
+
+
 echo "STY 打包程序"
 cd /Users/wibus/Desktop/wibus/Wibus\ blog/Develop-Typecho
 # mkdir Mix
@@ -11,9 +14,18 @@ trash .git
 trash .github
 find . -name '.DS_Store'
 find . -name '.DS_Store' -delete
-cd ~/desktop
+
+echo "Replace version"
+fileContent=`cd ~/desktop/STY && cat index.php`
+version="$date""-dev"
+cd ~/desktop/STY
+echo ${fileContent/@version/@version $version} > index.php
+
 echo "Compressing STY"
-zip -q -r STY\ Dev.zip STY
+cd ~/desktop
+zip -q -r STY\ $date.zip STY
+echo "STY Dev Preview 压缩完成"
+
 echo "Delete dir(in safe mode)"
 trash STY
 
